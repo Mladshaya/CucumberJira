@@ -27,11 +27,11 @@ public class ProjectPageSteps {
         System.out.println(amount);
     }
 
-    @Then("Находим и открываем задачу TestSelenium_bug")
-    public static void searchTask() {
+    @Then("Находим и открываем задачу {string}")
+    public static void searchTask(String task) {
         taskFilter.shouldBe(Condition.enabled).click();
         buttonAllTasks.click();
-        searchField.shouldBe(Condition.empty).setValue("TestSelenium_bug");
+        searchField.shouldBe(Condition.empty).setValue(task);
         searchField.pressEnter();
     }
 

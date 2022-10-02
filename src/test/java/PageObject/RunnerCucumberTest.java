@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"Hooks", "PageObject.PageSteps"}
+        glue = {"Hooks", "PageObject.PageSteps"},
+        tags = "@all"
 )
 
 public class RunnerCucumberTest {
