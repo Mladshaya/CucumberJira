@@ -10,13 +10,13 @@ import static com.codeborne.selenide.Condition.*;
 
 public class ProjectPageSteps {
 
-    @Then("Открываем проект Test")
-    public static void openProject() {
+    @Then("Открываем проект {string}")
+    public static void openProject(String projectName) {
         buttonProject.shouldBe(Condition.enabled).click();
         buttonAllProject.shouldBe(Condition.visible).click();
-        searchProject.setValue("Test");
+        searchProject.setValue(projectName);
         searchProject.pressEnter();
-        linkProject.shouldHave(Condition.exactText("Test")).click();
+        linkProject.shouldHave(Condition.exactText(projectName)).click();
     }
 
     @Then("Проверяем количество задач в проекте")
